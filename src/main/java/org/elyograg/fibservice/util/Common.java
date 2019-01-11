@@ -1,5 +1,8 @@
 package org.elyograg.fibservice.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.http.ResponseEntity;
 
 /**
@@ -25,5 +28,21 @@ public class Common {
 	 * An empty response object for Server Error (500).
 	 */
 	public static final ResponseEntity<Void> emptyResponseServerError = ResponseEntity.status(500).build();
+
+	public static List<Long> getFibonacciSequence(int inputValue) {
+		List<Long> list = new ArrayList<>();
+
+		long first = 0;
+		long second = 1;
+		long sum = 0;
+		for (int i = 0; i < inputValue; i++) {
+			list.add(first);
+			sum = first + second;
+			first = second;
+			second = sum;
+		}
+
+		return list;
+	}
 
 }

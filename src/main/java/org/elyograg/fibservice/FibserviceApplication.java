@@ -9,5 +9,4 @@ public class FibserviceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(FibserviceApplication.class, args);
 	}
-
 }

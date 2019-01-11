@@ -18,10 +18,11 @@ public class CommonHtmlBits {
 	public static final String DQ = "\"";
 
 	/**
-	 * Appends a DOCTYPE indicating XHTML Strict, an opening html tag, a full head
-	 * with the included page title, and an opening body tag to the referenced
-	 * {@link StringBuilder}. Includes a meta tag defining the type as text/html,
-	 * and charset as utf-8.
+	 * Constructs the top of an HTML document. This includes a DOCTYPE indicating
+	 * XHTML Strict, an opening html tag, a full head with the included page title,
+	 * and an opening body tag. Appends this constructed text string to the
+	 * referenced {@link StringBuilder}. Includes a meta tag defining the type as
+	 * text/html, and charset as utf-8.
 	 * 
 	 * @param sb        The {@link StringBuilder} to append to.
 	 * @param pageTitle The page title to use.
@@ -36,6 +37,7 @@ public class CommonHtmlBits {
 		sb.append("  <title>");
 		sb.append(pageTitle);
 		sb.append("</title>" + NL);
+		sb.append("</head>" + NL);
 		sb.append("<body>" + NL);
 	}
 
