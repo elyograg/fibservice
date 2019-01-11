@@ -1,7 +1,7 @@
 # fibservice
 Fibonacci Service
 
-To compile, run the "gradlew" script with "clean assemble" as the arguments.
+To compile, run the "gradlew" script with "clean test assemble" as the arguments.
 
 To start, type:
 
