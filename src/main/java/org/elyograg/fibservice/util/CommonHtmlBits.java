@@ -7,8 +7,8 @@ package org.elyograg.fibservice.util;
 public class CommonHtmlBits {
 	/*
 	 * Hoping that the java compiler will optimize away the string concatenation
-	 * utilized here, since string concatenation is not the most fastest way to
-	 * create strings.
+	 * utilized here, since string concatenation is not the fastest way to create
+	 * strings.
 	 */
 
 	/** A constant for a newline character. */
