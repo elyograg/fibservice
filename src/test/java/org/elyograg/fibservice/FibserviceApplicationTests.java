@@ -23,9 +23,13 @@ public class FibserviceApplicationTests {
 
 	@Test
 	public void testSequence() {
-		List<Long> actual = Common.getFibonacciSequence(5);
-		List<Long> expected = Arrays.asList(0L, 1L, 1L, 2L, 3L);
-		
+		List<Long> actual = null;
+		List<Long> expected = null;
+		actual = Common.getFibonacciSequence(5);
+		expected = Arrays.asList(0L, 1L, 1L, 2L, 3L);
+		assertThat(actual, is(expected));
+		actual = Common.getFibonacciSequence(8);
+		expected = Arrays.asList(0L, 1L, 1L, 2L, 3L, 5L, 8L, 13L);
 		assertThat(actual, is(expected));
 	}
 }
