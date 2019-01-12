@@ -108,7 +108,7 @@ public class FibonacciController {
 		}
 
 		CommonHtmlBits.appendBodyHtmlEnd(sb);
-		log.info("Fibonacci page loaded with value {}", input);
+		log.info("Fibonacci page loaded with value \"{}\"", input);
 		return responseFromCharSequence(sb);
 	}
 
