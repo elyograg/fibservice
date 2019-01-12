@@ -20,12 +20,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class FibonacciController {
 	private static final Logger log = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 
-	private static final String controlUrlPath = "/control";
-	private static final String statusUrlPath = "/status";
-	private static final String docidUrlPath = "/docid";
-	private static final String pixTestUrlPath = "/pixtest";
-	private static final String buildStatusUrlPath = "/buildstatus";
-
 	@SuppressWarnings("rawtypes")
 	@RequestMapping(value = { "/", "/index.html" })
 	public ResponseEntity mainPage(@RequestParam(value = "input", required = false) final String paramInput) {
@@ -114,61 +108,7 @@ public class FibonacciController {
 		}
 
 		CommonHtmlBits.appendBodyHtmlEnd(sb);
-		return responseFromCharSequence(sb);
-	}
-
-	/*
-	 * 
-	 * <form action="/"> Input:<br> <input type="text" name="input" value=""><br>
-	 * <input type="submit" value="Submit"> </form>
-	 * 
-	 */
-	@SuppressWarnings("rawtypes")
-	@RequestMapping(value = { "/placeholder" })
-	public ResponseEntity placeHolder() {
-		StringBuilder sb = new StringBuilder();
-		CommonHtmlBits.appendStrictXhtmlPageBegin(sb, "Fibonacci Generator");
-		sb.append("<a href = ");
-		sb.append(CommonHtmlBits.DQ);
-		sb.append(statusUrlPath);
-		sb.append(CommonHtmlBits.DQ);
-		sb.append(">");
-		sb.append("Index Status");
-		sb.append("</a><br/>");
-		sb.append(CommonHtmlBits.NL);
-		sb.append("<a href = ");
-		sb.append(CommonHtmlBits.DQ);
-		sb.append(buildStatusUrlPath);
-		sb.append(CommonHtmlBits.DQ);
-		sb.append(">");
-		sb.append("Build Status");
-		sb.append("</a><br/>");
-		sb.append(CommonHtmlBits.NL);
-		sb.append("<a href = ");
-		sb.append(CommonHtmlBits.DQ);
-		sb.append(controlUrlPath);
-		sb.append(CommonHtmlBits.DQ);
-		sb.append(">");
-		sb.append("Index Control");
-		sb.append("</a><br/>");
-		sb.append(CommonHtmlBits.NL);
-		sb.append("<a href = ");
-		sb.append(CommonHtmlBits.DQ);
-		sb.append(docidUrlPath);
-		sb.append(CommonHtmlBits.DQ);
-		sb.append(">");
-		sb.append("DocID");
-		sb.append("</a><br/>");
-		sb.append(CommonHtmlBits.NL);
-		sb.append("<a href = ");
-		sb.append(CommonHtmlBits.DQ);
-		sb.append(pixTestUrlPath);
-		sb.append(CommonHtmlBits.DQ);
-		sb.append(">");
-		sb.append("Pixolution Test");
-		sb.append("</a><br/>");
-		sb.append(CommonHtmlBits.NL);
-		CommonHtmlBits.appendBodyHtmlEnd(sb);
+		log.info("Fibonacci page loaded with value {}", input);
 		return responseFromCharSequence(sb);
 	}
 
