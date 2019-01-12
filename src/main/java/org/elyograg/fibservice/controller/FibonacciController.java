@@ -38,7 +38,7 @@ public class FibonacciController {
 		sb.append(CommonHtmlBits.DQ);
 		sb.append(">");
 		sb.append(CommonHtmlBits.NL);
-		sb.append("  Input:<br>");
+		sb.append("  <p>Number of values to print:</p>");
 		sb.append(CommonHtmlBits.NL);
 		sb.append("  <input type=");
 		sb.append(CommonHtmlBits.DQ);
